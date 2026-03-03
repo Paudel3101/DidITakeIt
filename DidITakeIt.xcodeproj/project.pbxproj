@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC8449B62F56787E000BC447 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = CC8449B52F56787E000BC447 /* README.md */; };
 		CCF44FDC2F565C8D00A9061D /* DidITakeIt Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CCF44FDB2F565C8D00A9061D /* DidITakeIt Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CC8449B52F56787E000BC447 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CCF44FCE2F565C8B00A9061D /* DidITakeIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DidITakeIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCF44FDB2F565C8D00A9061D /* DidITakeIt Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DidITakeIt Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -73,6 +75,7 @@
 		CCF44FC52F565C8B00A9061D = {
 			isa = PBXGroup;
 			children = (
+				CC8449B52F56787E000BC447 /* README.md */,
 				CCF44FD02F565C8B00A9061D /* DidITakeIt */,
 				CCF44FDF2F565C8D00A9061D /* DidITakeIt Watch App */,
 				CCF44FCF2F565C8B00A9061D /* Products */,
@@ -180,6 +183,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC8449B62F56787E000BC447 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
