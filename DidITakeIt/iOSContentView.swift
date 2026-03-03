@@ -46,14 +46,13 @@ struct iOSContentView: View {
                     VStack(alignment: .leading, spacing: 8) {
                         Text("Today")
                             .font(.system(size: 32, weight: .bold))
-                            .accessibilityAddTraits(.header)
+                            .accessibilityAddTraits(.isHeader)
                         
                         Text(Date().formatted(date: .abbreviated, time: .omitted))
                             .foregroundColor(.secondary)
                             .accessibilityHidden(true)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal)
                     
                     // Quick Status Cards
                     if store.medications.isEmpty {
@@ -136,7 +135,7 @@ struct iOSContentView: View {
                         Text("Adherence")
                             .font(.title2)
                             .fontWeight(.bold)
-                            .accessibilityAddTraits(.header)
+                            .accessibilityAddTraits(.isHeader)
                         
                         ForEach(store.medications) { med in
                             VStack(alignment: .leading, spacing: 8) {
@@ -271,7 +270,7 @@ struct iOSContentView: View {
             Text("No Medications")
                 .font(.title3)
                 .fontWeight(.semibold)
-                .accessibilityAddTraits(.header)
+                .accessibilityAddTraits(.isHeader)
             
             Text("Add your first medication to get started")
                 .foregroundColor(.secondary)
@@ -294,6 +293,11 @@ struct iOSContentView: View {
     
     private func requestNotificationPermission() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+            if let error = error {
+                print("Notification permission error: \(error)")
+                return
+            }
+            
             if granted {
                 DispatchQueue.main.async {
                     UIApplication.shared.registerForRemoteNotifications()
@@ -302,6 +306,7 @@ struct iOSContentView: View {
         }
     }
 }
+
 
 #Preview {
     iOSContentView()
